@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillGrid - Connect Skilled Workers Globally</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="main-title">🌍 SkillGrid — Gaon Ya Shehar Se Duniya Tak Kaam Ka Mauqa</h1>
+            <p id="main-description">Socho agar aapka hunar duniya bhar ke logon tak pohanch jaye 💡</p>
+        </header>
+
+        <div class="language-selector">
+            <button onclick="changeLanguage('en')" class="lang-btn active" id="btn-en">English</button>
+            <button onclick="changeLanguage('ur')" class="lang-btn" id="btn-ur">اردو</button>
+            <button onclick="changeLanguage('hi')" class="lang-btn" id="btn-hi">हिंदी</button>
+            <button onclick="changeLanguage('ro')" class="lang-btn" id="btn-ro">Roman Urdu</button>
+        </div>
+
+        <form id="skillgrid-form">
+            <!-- Section 1: About You -->
+            <section class="form-section">
+                <h2 id="section1-title">🧍‍♀️ Section 1: Aapka Taaruf (About You)</h2>
+                
+                <div class="form-group">
+                    <label for="name" id="q1-label">1️⃣ Aapka naam kya hai? (मख्त्सर जवाब)</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="country" id="q2-label">2️⃣ Aap kis country se तालुक़ रखते हैं? (Dropdown)</label>
+                    <select id="country" name="country" required>
+                        <option value="">-- Select Country --</option>
+                        <option value="pakistan">Pakistan</option>
+                        <option value="india">India</option>
+                        <option value="bangladesh">Bangladesh</option>
+                        <option value="nepal">Nepal</option>
+                        <option value="srilanka">Sri Lanka</option>
+                        <option value="afghanistan">Afghanistan</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location" id="q3-label">3️⃣ Aapका गाँव या शहर का नाम क्या है? (मख्त्सर जवाब)</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+
+                <div class="form-group">
+                    <label id="q4-label">4️⃣ Aपकी उमर किस रेंज में है?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="age" value="under-18" required> <span id="age-opt1">18 साल से कम</span></label>
+                        <label><input type="radio" name="age" value="18-25"> <span id="age-opt2">18–25</span></label>
+                        <label><input type="radio" name="age" value="26-35"> <span id="age-opt3">26–35</span></label>
+                        <label><input type="radio" name="age" value="36-50"> <span id="age-opt4">36–50</span></label>
+                        <label><input type="radio" name="age" value="over-50"> <span id="age-opt5">50 से अधिक</span></label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Your Skills -->
+            <section class="form-section">
+                <h2 id="section2-title">🧰 Section 2: Aapका हुनार (Your Skills)</h2>
+                
+                <div class="form-group">
+                    <label id="q5-label">5️⃣ Aप किस काम में एक्सपर्ट हो? (Checkboxes)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="skills" value="sewing"> <span id="skill-opt1">सिलाई / दर्जी</span></label>
+                        <label><input type="checkbox" name="skills" value="translation"> <span id="skill-opt2">ट्रान्सलेशन / तर्जुमा</span></label>
+                        <label><input type="checkbox" name="skills" value="graphic-design"> <span id="skill-opt3">ग्राफिक डिजाइन</span></label>
+                        <label><input type="checkbox" name="skills" value="video-editing"> <span id="skill-opt4">वीडियो एडिटिंग</span></label>
+                        <label><input type="checkbox" name="skills" value="data-entry"> <span id="skill-opt5">डेटा एंट्री</span></label>
+                        <label><input type="checkbox" name="skills" value="wood-metal-work"> <span id="skill-opt6">लकड़ी या धातु का काम</span></label>
+                        <label><input type="checkbox" name="skills" value="computer-coding"> <span id="skill-opt7">कंप्यूटर / कोडिंग</span></label>
+                        <label><input type="checkbox" name="skills" value="other"> <span id="skill-opt8">दूसरा (Other):</span> 
+                            <input type="text" id="other-skill" name="other-skill"></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label id="q6-label">6️⃣ ये काम आप कितने समय से कर रहे हो?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="experience" value="less-than-6-months" required> <span id="exp-opt1">6 महीने से कम</span></label>
+                        <label><input type="radio" name="experience" value="1-2-years"> <span id="exp-opt2">1–2 साल</span></label>
+                        <label><input type="radio" name="experience" value="3-5-years"> <span id="exp-opt3">3–5 साल</span></label>
+                        <label><input type="radio" name="experience" value="more-than-5-years"> <span id="exp-opt4">5 साल से अधिक</span></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label id="q7-label">7️⃣ क्या आपको कभी ऑनलाइन ऑर्डर मिला है?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="previous-order" value="yes" required> <span id="order-opt1">हां</span></label>
+                        <label><input type="radio" name="previous-order" value="no"> <span id="order-opt2">नहीं</span></label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: About SkillGrid App -->
+            <section class="form-section">
+                <h2 id="section3-title">🌍 Section 3: SkillGrid App के बारे में</h2>
+                
+                <div class="form-group">
+                    <label id="q8-label">8️⃣ अगर एक ऐप आपको दुनिया भर के क्लायंट्स से कनेक्ट कर दे, तो क्या आप इसे करोगे?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="use-app" value="yes" required> <span id="app-use-opt1">हां</span></label>
+                        <label><input type="radio" name="use-app" value="maybe"> <span id="app-use-opt2">शायद</span></label>
+                        <label><input type="radio" name="use-app" value="no"> <span id="app-use-opt3">नहीं</span></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label id="q11-label">9️⃣ क्या आप चाहेंगे कि ऐप आपको ट्रेनिंग वीडियोज़ और स्किल इम्प्रोविमेंट कोर्स भी दे?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="training" value="yes" required> <span id="training-opt1">हां, जरूर</span></label>
+                        <label><input type="radio" name="training" value="maybe"> <span id="training-opt2">शायद</span></label>
+                        <label><input type="radio" name="training" value="no"> <span id="training-opt3">नहीं, सिर्फ क्लायंट्स चाहिए</span></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label id="q12-label">11️⃣ अगर ऐप आपके लिए “Auto-Translation Chat” फीचर लाये (जो इंग्लिश को उर्दू या हिंदी में ट्रान्सलेट करे), तो क्या आप इसे करोगे?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="translation-feature" value="yes" required> <span id="translation-opt1">हां, बहोत जरूरी है</span></label>
+                        <label><input type="radio" name="translation-feature" value="maybe"> <span id="translation-opt2">शायद</span></label>
+                        <label><input type="radio" name="translation-feature" value="no"> <span id="translation-opt3">नहीं, जरूरत नहीं</span></label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Future Vision -->
+            <section class="form-section">
+                <h2 id="section4-title">🎯 Section 4: Future Vision</h2>
+                
+                <div class="form-group">
+                    <label for="life-change" id="q13-label">12️⃣ अगर आपको घर बैठे दुनिया भर से ऑर्डर मिलने लगे तो आपकी जीवन कैसे बदलेगी? (Paragraph)</label>
+                    <textarea id="life-change" name="life-change" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label id="q14-label">13️⃣ क्या आप बीटा यूज़र बनना चाहेंगे (जो सब से पहले ऐप उसे करें)?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="beta-user" value="yes" required> <span id="beta-opt1">हां</span></label>
+                        <label><input type="radio" name="beta-user" value="no"> <span id="beta-opt2">नहीं</span></label>
+                    </div>
+                </div>
+            </section>
+
+            <button type="submit" class="submit-btn" id="submit-btn">Submit Form</button>
+        </form>
+
+        <!-- Animated Thank-You / Confirmation Screen -->
+        <div id="thankArea" class="hidden">
+            <h2 id="thankTitle"></h2>
+            <div id="typedMessage"></div>
+            <a href="https://www.instagram.com/kiran.skillgrid" id="instagramBtn" target="_blank" rel="noopener" style="display: inline-block; padding: 15px 30px; background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%); color: white; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none; margin: 20px 0; cursor: pointer;">🌸 Follow @kiran.skillgrid</a>
+            <!-- Fallback link in case JavaScript fails -->
+            <noscript>
+                <a href="https://www.instagram.com/kiran.skillgrid" target="_blank" rel="noopener" style="display: inline-block; padding: 15px 30px; background: linear-gradient(120deg, #43cea2 0%, #185a9d 100%); color: white; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none; margin: 20px 0; cursor: pointer;">🌸 Follow @kiran.skillgrid (Enable JavaScript for full experience)</a>
+            </noscript>
+            <div id="noteLine"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
