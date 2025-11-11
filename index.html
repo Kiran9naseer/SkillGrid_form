@@ -141,7 +141,21 @@
                 </div>
 
                 <div class="form-group">
-                    <label id="q14-label">13️⃣ क्या आप बीटा यूज़र बनना चाहेंगे (जो सब से पहले ऐप उसे करें)?</label>
+                    <label for="email" id="q14-label">13️⃣ अगर आप चाहें तो अपना ईमेल दें (Optional)</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1.1rem; transition: all 0.3s; background: #fafafa; appearance: none;">
+                    <style>
+                        #email::placeholder {
+                            color: #6c757d !important;
+                            opacity: 1;
+                        }
+                        #email::-ms-input-placeholder {
+                            color: #6c757d !important;
+                        }
+                    </style>
+                </div>
+
+                <div class="form-group">
+                    <label id="q15-label">14️⃣ क्या आप बीटा यूज़र बनना चाहेंगे (जो सब से पहले ऐप उसे करें)?</label>
                     <div class="radio-group">
                         <label><input type="radio" name="beta-user" value="yes" required> <span id="beta-opt1">हां</span></label>
                         <label><input type="radio" name="beta-user" value="no"> <span id="beta-opt2">नहीं</span></label>

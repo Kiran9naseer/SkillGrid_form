@@ -126,6 +126,7 @@ header p {
 }
 
 .form-group input[type="text"],
+.form-group input[type="email"],
 .form-group textarea,
 .form-group select {
     width: 100%;
@@ -143,12 +144,27 @@ header p {
 }
 
 .form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
 .form-group textarea:focus,
 .form-group select:focus {
     border-color: #43cea2;
     outline: none;
     box-shadow: 0 0 0 4px rgba(67, 206, 162, 0.2);
     background: #fff;
+}
+
+/* Placeholder styling */
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder,
+.form-group textarea::placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+
+.form-group input[type="text"]::-ms-input-placeholder,
+.form-group input[type="email"]::-ms-input-placeholder,
+.form-group textarea::-ms-input-placeholder {
+    color: #6c757d;
 }
 
 .radio-group,
