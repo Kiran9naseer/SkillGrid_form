@@ -20,7 +20,12 @@
             <button onclick="changeLanguage('ro')" class="lang-btn" id="btn-ro">Roman Urdu</button>
         </div>
 
-        <form id="skillgrid-form">
+        <form id="skillgrid-form" name="skillgrid"    netlify netlify-honeypot="bot-field">
+
+            <input type="hidden" name="form-name" value="skillgrid">
+            <input type="hidden" name="bot-field">
+
+
             <!-- Section 1: About You -->
             <section class="form-section">
                 <h2 id="section1-title">🧍‍♀️ Section 1: Aapka Taaruf (About You)</h2>
