@@ -239,6 +239,11 @@ header p {
     transform: translateY(-2px);
 }
 
+.submit-btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
 .confirmation {
     text-align: center;
     padding: 50px 30px;
