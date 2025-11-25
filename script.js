@@ -17,14 +17,13 @@ const translations = {
         "age-opt5": "Over 50",
         "section2-title": "🧰 Section 2: Your Skills",
         "q5-label": "5️⃣ In which work are you an expert? (Checkboxes)",
-        "skill-opt1": "Sewing/Tailoring",
-        "skill-opt2": "Translation",
-        "skill-opt3": "Graphic Design",
-        "skill-opt4": "Video Editing",
-        "skill-opt5": "Data Entry",
-        "skill-opt6": "Wood/Metal Work",
-        "skill-opt7": "Computer/Coding",
-        "skill-opt8": "Other:",
+        "skill-opt1": "Translation",
+        "skill-opt2": "Graphic Design",
+        "skill-opt3": "Video Editing",
+        "skill-opt4": "Data Entry",
+        "skill-opt5": "E-commerce",
+        "skill-opt6": "Computer/Coding",
+        "skill-opt7": "Other:",
         "q6-label": "6️⃣ How long have you been doing this work?",
         "exp-opt1": "Less than 6 months",
         "exp-opt2": "1–2 years",
@@ -49,7 +48,7 @@ const translations = {
         "section4-title": "🎯 Section 4: Future Vision",
         "q13-label": "11️⃣ If you start receiving orders from around the world while staying at home, how will your life change? (Paragraph)",
         "q14-label": "12️⃣ If you'd like, please provide your email (Optional)",
-        "q15-label": "13️⃣ Would you like to become a Beta User?",
+        "q15-label": "14️⃣ Would you like to become a Beta User (the person who tests the app before launch first)?",
         "beta-opt1": "Yes",
         "beta-opt2": "No",
         "submit-btn": "Submit Form",
@@ -73,14 +72,13 @@ const translations = {
         "age-opt5": "50 سے زیادہ",
         "section2-title": "🧰 سیکشن 2: آپ کا ہنر (Your Skills)",
         "q5-label": "5️⃣ آپ کس کام میں ایکسپرٹ ہو؟ (چیک باکسز)",
-        "skill-opt1": "سلائی / درزی",
-        "skill-opt2": "ترجمہ / ترجمہ",
-        "skill-opt3": "گرافک ڈیزائن",
-        "skill-opt4": "ویڈیو ایڈیٹنگ",
-        "skill-opt5": "ڈیٹا انٹری",
-        "skill-opt6": "لکڑی یا دھات کا کام",
-        "skill-opt7": "کمپیوٹر / کوڈنگ",
-        "skill-opt8": "دوسرا (Other):",
+        "skill-opt1": "ترجمہ / ترجمہ",
+        "skill-opt2": "گرافک ڈیزائن",
+        "skill-opt3": "ویڈیو ایڈیٹنگ",
+        "skill-opt4": "ڈیٹا انٹری",
+        "skill-opt5": "ای کامرس",
+        "skill-opt6": "کمپیوٹر / کوڈنگ",
+        "skill-opt7": "دوسرا (Other):",
         "q6-label": "6️⃣ یہ کام آپ کتنے وقت سے کر رہے ہو؟",
         "exp-opt1": "6 مہینے سے کم",
         "exp-opt2": "1–2 سال",
@@ -105,14 +103,56 @@ const translations = {
         "section4-title": "🎯 سیکشن 4: مستقبل کا وژن",
         "q13-label": "11️⃣ اگر آپ کو گھر بیٹھے دنیا بھر سے آرڈر ملنے لگیں تو آپ کی زندگی کیسے بدلے گی؟ (پیراگراف)",
         "q14-label": "12️⃣ اگر آپ چاہیں تو اپنا ای میل دیں (اختیاری)",
-        "q15-label": "13️⃣ کیا آپ بیٹا یوزر بننا چاہیں گے؟",
+        "q15-label": "14️⃣ کیا آپ بیٹا یوزر بننا چاہیں گے (یعنی وہ شخص جو سب سے پہلے ایپ کو ٹیسٹ کرے گا)؟",
         "beta-opt1": "ہاں",
         "beta-opt2": "نہیں",
         "submit-btn": "فرم جمع کرائیں",
         "confirm-title": "✅ تصدیقی پیغام",
         "confirm-text": "🙏 شکریہ!\nاب آپ سکل گرڈ کی ایرلی ایکسس لسٹ پر ہیں 💫\n🌍 آپ کے گاؤں سے دنیا تک — آپ کے ہنر کی اہمیت ہے!\n\n🚀 اپ ڈیٹس اور نوکریاں صرف انسٹاگرام پر:\n👉 @kiran.skillgrid\n\n🌸 آگے رہنے کے لیے ابھی فالو کریں!",
         "instagram-link": "https://www.instagram.com/kiran.skillgrid",
-        "please-select-at-least-one-skill": "براہ کرم کم از کم ایک مہارت منتخب کریں"
+        "please-select-at-least-one-skill": "براہ کرم کم از کم ایک مہارت منتخب کریں",
+        "countries": {
+            "australia": "آسٹریلیا",
+            "austria": "آسٹریا",
+            "bahrain": "بحرین",
+            "bangladesh": "بنگلہ دیش",
+            "belgium": "بیلجیم",
+            "canada": "کینیڈا",
+            "china": "چین",
+            "denmark": "ڈنمارک",
+            "finland": "فن لینڈ",
+            "france": "فرانس",
+            "germany": "جرمنی",
+            "greece": "یونان",
+            "india": "بھارت",
+            "indonesia": "انڈونیشیا",
+            "ireland": "آئرلینڈ",
+            "italy": "اٹلی",
+            "japan": "جاپان",
+            "kuwait": "کویت",
+            "malaysia": "ملائیشیا",
+            "netherlands": "نیدرلینڈ",
+            "new-zealand": "نیوزی لینڈ",
+            "norway": "ناروے",
+            "oman": "عمان",
+            "pakistan": "پاکستان",
+            "philippines": "فلپائن",
+            "poland": "پولینڈ",
+            "portugal": "پرتگال",
+            "qatar": "قطر",
+            "saudi-arabia": "سعودی عرب",
+            "singapore": "سنگاپور",
+            "south-africa": "جنوبی افریقہ",
+            "south-korea": "جنوبی کوریا",
+            "spain": "ہسپانیہ",
+            "sri-lanka": "سری لنکا",
+            "sweden": "سویڈن",
+            "switzerland": "سوئٹزرلینڈ",
+            "turkey": "ترکی",
+            "uae": "متحدہ عرب امارات",
+            "united-kingdom": "برطانیہ",
+            "united-states": "ریاستہائے متحدہ امریکا"
+        }
     },
     hi: {
         "main-title": "🌍 स्किलग्रिड — गांव/शहर से वैश्विक अवसरों तक",
@@ -129,14 +169,13 @@ const translations = {
         "age-opt5": "50 से अधिक",
         "section2-title": "🧰 अनुभाग 2: आपके कौशल",
         "q5-label": "5️⃣ आप किस काम में विशेषज्ञ हैं? (चेकबॉक्स)",
-        "skill-opt1": "सिलाई/दर्जी का काम",
-        "skill-opt2": "अनुवाद",
-        "skill-opt3": "ग्राफ़िक डिज़ाइन",
-        "skill-opt4": "वीडियो संपादन",
-        "skill-opt5": "डेटा प्रविष्टि",
-        "skill-opt6": "लकड़ी/धातु का काम",
-        "skill-opt7": "कंप्यूटर/कोडिंग",
-        "skill-opt8": "अन्य:",
+        "skill-opt1": "अनुवाद",
+        "skill-opt2": "ग्राफ़िक डिज़ाइन",
+        "skill-opt3": "वीडियो संपादन",
+        "skill-opt4": "डेटा प्रविष्टि",
+        "skill-opt5": "ई-कॉमर्स",
+        "skill-opt6": "कंप्यूटर/कोडिंग",
+        "skill-opt7": "अन्य:",
         "q6-label": "6️⃣ आप कितने समय से इस काम को कर रहे हैं?",
         "exp-opt1": "6 महीने से कम",
         "exp-opt2": "1–2 वर्ष",
@@ -161,14 +200,56 @@ const translations = {
         "section4-title": "🎯 अनुभाग 4: भविष्य का दृष्टिकोण",
         "q13-label": "11️⃣ अगर आप घर बैठे दुनिया भर से ऑर्डर प्राप्त करना शुरू कर देते हैं, तो आपका जीवन कैसे बदलेगा? (पैराग्राफ)",
         "q14-label": "12️⃣ यदि आप चाहें, तो कृपया अपना ईमेल प्रदान करें (वैकल्पिक)",
-        "q15-label": "13️⃣ क्या आप बीटा उपयोगकर्ता बनना चाहेंगे?",
+        "q15-label": "14️⃣ क्या आप बीटा यूज़र बनना चाहेंगे (जो सबसे पहले ऐप को टेस्ट करके इस्तेमाल करेगा)?",
         "beta-opt1": "हाँ",
         "beta-opt2": "नहीं",
         "submit-btn": "फॉर्म जमा करें",
         "confirm-title": "✅ पुष्टि संदेश",
         "confirm-text": "🙏 धन्यवाद!\nअब आप स्किलग्रिड की अरली एक्सेस सूची में हैं 💫\n🌍 आपके गांव से दुनिया तक — आपके कौशल का महत्व है!\n\n🚀 अपडेट और नौकरियाँ केवल इंस्टाग्राम पर:\n👉 @kiran.skillgrid\n\n🌸 आगे रहने के लिए अभी फॉलो करें!",
         "instagram-link": "https://www.instagram.com/kiran.skillgrid",
-        "please-select-at-least-one-skill": "कृपया कम से कम एक कौशल चुनें"
+        "please-select-at-least-one-skill": "कृपया कम से कम एक कौशल चुनें",
+        "countries": {
+            "australia": "ऑस्ट्रेलिया",
+            "austria": "ऑस्ट्रिया",
+            "bahrain": "बहरीन",
+            "bangladesh": "बांग्लादेश",
+            "belgium": "बेल्जियम",
+            "canada": "कनाडा",
+            "china": "चीन",
+            "denmark": "डेनमार्क",
+            "finland": "फिनलैंड",
+            "france": "फ्रांस",
+            "germany": "जर्मनी",
+            "greece": "ग्रीस",
+            "india": "भारत",
+            "indonesia": "इंडोनेशिया",
+            "ireland": "आयरलैंड",
+            "italy": "इटली",
+            "japan": "जापान",
+            "kuwait": "कुवैत",
+            "malaysia": "मलेशिया",
+            "netherlands": "नीदरलैंड",
+            "new-zealand": "न्यूजीलैंड",
+            "norway": "नॉर्वे",
+            "oman": "ओमान",
+            "pakistan": "पाकिस्तान",
+            "philippines": "फिलीपींस",
+            "poland": "पोलैंड",
+            "portugal": "पुर्तगाल",
+            "qatar": "कतर",
+            "saudi-arabia": "सऊदी अरब",
+            "singapore": "सिंगापुर",
+            "south-africa": "दक्षिण अफ्रीका",
+            "south-korea": "दक्षिण कोरिया",
+            "spain": "स्पेन",
+            "sri-lanka": "श्रीलंका",
+            "sweden": "स्वीडन",
+            "switzerland": "स्विट्जरलैंड",
+            "turkey": "तुर्की",
+            "uae": "संयुक्त अरब अमीरात",
+            "united-kingdom": "यूनाइटेड किंगडम",
+            "united-states": "संयुक्त राज्य अमेरिका"
+        }
     },
     ro: {
         "main-title": "🌍 SkillGrid — Gaon ya Shehar se Duniya ke Mauqay tak",
@@ -185,14 +266,13 @@ const translations = {
         "age-opt5": "50 se zyada",
         "section2-title": "🧰 Section 2: Aap ke Hunar",
         "q5-label": "5️⃣ Aap kis kaam mein expert hain? (Checkboxes)",
-        "skill-opt1": "Silaee/Darzi ka kaam",
-        "skill-opt2": "Tarjuma/Translation",
-        "skill-opt3": "Graphic Design",
-        "skill-opt4": "Video Editing",
-        "skill-opt5": "Data Entry",
-        "skill-opt6": "Lakdi/Dhaatu ka kaam",
-        "skill-opt7": "Computer/Coding",
-        "skill-opt8": "Dusra (Other):",
+        "skill-opt1": "Tarjuma/Translation",
+        "skill-opt2": "Graphic Design",
+        "skill-opt3": "Video Editing",
+        "skill-opt4": "Data Entry",
+        "skill-opt5": "E-commerce",
+        "skill-opt6": "Computer/Coding",
+        "skill-opt7": "Dusra (Other):",
         "q6-label": "6️⃣ Ye kaam aap kitne waqt se kar rahe hain?",
         "exp-opt1": "6 mahine se kam",
         "exp-opt2": "1–2 saal",
@@ -217,7 +297,7 @@ const translations = {
         "section4-title": "🎯 Section 4: Mustaqbil ka Wizan",
         "q13-label": "11️⃣ Agar aap ghar baith ke duniya bhar se orders milne lagein to aap ki zindagi kaise badlegi? (Paragraph)",
         "q14-label": "12️⃣ Agar aap chahen to apna email dein (Ikhtiyari)",
-        "q15-label": "13️⃣ Kya aap beta user banana chahenge?",
+        "q15-label": "14️⃣ Kya aap Beta User banna chaheinge (jo sab se pehle app ko use kar ke test karega)?",
         "beta-opt1": "Haan",
         "beta-opt2": "Nahi",
         "submit-btn": "Form Jamma Karen",
@@ -270,6 +350,30 @@ function changeLanguage(lang) {
         document.body.classList.remove('urdu-text');
     } else {
         document.body.classList.remove('urdu-text', 'hindi-text');
+    }
+    
+    // Update country dropdown options based on selected language
+    const countrySelect = document.getElementById('country');
+    if (countrySelect && translations[lang] && translations[lang].countries) {
+        // Store the currently selected value
+        const selectedValue = countrySelect.value;
+        
+        // Clear existing options except the first one ("-- Select Country --")
+        while (countrySelect.options.length > 1) {
+            countrySelect.remove(1);
+        }
+        
+        // Add translated country options
+        const countries = translations[lang].countries;
+        Object.keys(countries).sort().forEach(countryCode => {
+            const option = document.createElement('option');
+            option.value = countryCode;
+            option.textContent = countries[countryCode];
+            countrySelect.appendChild(option);
+        });
+        
+        // Restore the previously selected value if it still exists
+        countrySelect.value = selectedValue;
     }
 }
 
@@ -356,10 +460,10 @@ changeLanguage('en');
 
 // Typewriter & thank you logic (unchanged)
 const thankYouMessages = {
-    en: { title: "✅ Confirmation", message: "🙏 Thank you!\nYou're now on SkillGrid's Early Access List 💫\n🌍 From your village to the world — your skills matter!", button: "🌸 Follow @kiran.skillgrid", note: "🚀 Updates & jobs only on Instagram" },
-    roman: { title: "✅ Tasdeeq Ho Gayi!", message: "🙏 Shukriya!\nAap ab SkillGrid ke Early Access List me shamil ho gaye hain 💫\n🌍 Gaon ya shehar se duniya tak — aapka hunar qeemti hai!", button: "🌸 Follow karo @kiran.skillgrid", note: "🚀 Updates aur jobs sirf Instagram par milenge" },
-    urdu: { title: "✅ تصدیق", message: "🙏 شکریہ!\nاب آپ سکل گرڈ کی ایرلی ایکسس لسٹ پر ہیں 💫\n🌍 آپ کے گاؤں سے دنیا تک — آپ کے ہنر کی اہمیت ہے!", button: "🌸 فالو کریں @kiran.skillgrid", note: "🚀 اپ ڈیٹس اور نوکریاں صرف انسٹاگرام پر" },
-    hi: { title: "✅ पुष्टि", message: "🙏 धन्यवाद!\nअब आप स्किलग्रिड की अरली एक्सेस सूची पर हैं 💫\n🌍 आपके गांव से दुनिया तक — आपके कौशल का महत्व है!", button: "🌸 फॉलो करें @kiran.skillgrid", note: "🚀 अपडेट और नौकरियाँ केवल इंस्टाग्राम पर" }
+    en: { title: "✅ Confirmation", message: "🙏 Thank you!\nYou're now on SkillGrid's Early Access List 💫\n🌍 From your village to the world — your skills matter!", button: "🌸 Follow @kiran.skillgrid", note: "🚀 This is a survey form — updates will be available on Instagram." },
+    roman: { title: "✅ Tasdeeq Ho Gayi!", message: "🙏 Shukriya!\nAap ab SkillGrid ke Early Access List me shamil ho gaye hain 💫\n🌍 Gaon ya shehar se duniya tak — aapka hunar qeemti hai!", button: "🌸 Follow karo @kiran.skillgrid", note: "🚀 Ye ek survey form hai — updates aapko Instagram par milengi." },
+    urdu: { title: "✅ تصدیق", message: "🙏 شکریہ!\nاب آپ سکل گرڈ کی ایرلی ایکسس لسٹ پر ہیں 💫\n🌍 آپ کے گاؤں سے دنیا تک — آپ کے ہنر کی اہمیت ہے!", button: "🌸 فالو کریں @kiran.skillgrid", note: "🚀 یہ ایک سروے فارم ہے — اپ ڈیٹس آپ کو انسٹاگرام پر ملیں گی۔" },
+    hi: { title: "✅ पुष्टि", message: "🙏 धन्यवाद!\nअब आप स्किलग्रिड की अरली एक्सेस सूची पर हैं 💫\n🌍 आपके गांव से दुनिया तक — आपके कौशल का महत्व है!", button: "🌸 फॉलो करें @kiran.skillgrid", note: "🚀 यह एक सर्वे फॉर्म है — अपडेट्स आपको इंस्टाग्राम पर मिलेंगी।" }
 };
 
 function detectFormLanguage() {
