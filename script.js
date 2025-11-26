@@ -315,6 +315,12 @@ let currentLanguage = 'en';
 function changeLanguage(lang) {
     currentLanguage = lang;
     
+    // Update the hidden form language field
+    const formLanguageField = document.getElementById('form-language');
+    if (formLanguageField) {
+        formLanguageField.value = lang;
+    }
+    
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
     document.getElementById(`btn-${lang}`).classList.add('active');
     
