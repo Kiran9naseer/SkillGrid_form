@@ -518,7 +518,7 @@ document.getElementById('skillgrid-form').addEventListener('submit', function(e)
             // Submit form data to Netlify
             const formData = new FormData(this);
             fetch('/', {
-                method: 'POST',
+                // method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams(formData).toString()
             }).then(() => {
@@ -600,3 +600,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputs=document.querySelectorAll('input, textarea, select');
     inputs.forEach(input=>{input.addEventListener('focus',function(){this.parentElement.style.transform='scale(1.02)';});input.addEventListener('blur',function(){this.parentElement.style.transform='scale(1)';});});
 });
+
+document.getElementById("skillgrid-form").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const formData = {
+    name: document.querySelector("[name='name']").value,
+    country: document.querySelector("[name='country']").value,
+    location: document.querySelector("[name='location']").value,
+    age: document.querySelector("[name='age']").value,
+    skills: document.querySelector("[name='skills']").value,
+    other_skill: document.querySelector("[name='other_skill']").value,
+    experience: document.querySelector("[name='experience']").value,
+    previous_order: document.querySelector("[name='previous_order']").value,
+    use_app: document.querySelector("[name='use_app']").value,
+    training: document.querySelector("[name='training']").value,
+    translation_feature: document.querySelector("[name='translation_feature']").value,
+    life_change: document.querySelector("[name='life_change']").value,
+    email: document.querySelector("[name='email']").value,
+    beta_user: document.querySelector("[name='beta_user']").value,
+    form_language: document.querySelector("[name='form_language']").value,
+  };
+
+  const response = await fetch(
+    "https://script.google.com/macros/s/AKfycbwlACkVJbJe6OmL39YbeTINZalzznXAfoG1PzE3PjrGYslUOkTFO_QoNYkt5em6U2Rl4A/exec",
+    {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: { "Content-Type": "application/json" }
+    }
+  );
+
+  alert("Form submitted successfully!");
+});
+
