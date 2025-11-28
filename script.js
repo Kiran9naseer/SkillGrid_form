@@ -608,29 +608,32 @@ document.getElementById("skillgrid-form").addEventListener("submit", async funct
     name: document.querySelector("[name='name']").value,
     country: document.querySelector("[name='country']").value,
     location: document.querySelector("[name='location']").value,
-    age: document.querySelector("[name='age']").value,
-    skills: document.querySelector("[name='skills']").value,
-    other_skill: document.querySelector("[name='other_skill']").value,
-    experience: document.querySelector("[name='experience']").value,
-    previous_order: document.querySelector("[name='previous_order']").value,
-    use_app: document.querySelector("[name='use_app']").value,
-    training: document.querySelector("[name='training']").value,
-    translation_feature: document.querySelector("[name='translation_feature']").value,
-    life_change: document.querySelector("[name='life_change']").value,
+    age: document.querySelector("input[name='age']:checked") ? document.querySelector("input[name='age']:checked").value : '',
+    skills: Array.from(document.querySelectorAll("input[name='skills']:checked")).map(cb => cb.value).join(", "),
+    other_skill: document.querySelector("[name='other-skill']") ? document.querySelector("[name='other-skill']").value : '',
+    experience: document.querySelector("input[name='experience']:checked") ? document.querySelector("input[name='experience']:checked").value : '',
+    previous_order: document.querySelector("input[name='previous-order']:checked") ? document.querySelector("input[name='previous-order']:checked").value : '',
+    use_app: document.querySelector("input[name='use-app']:checked") ? document.querySelector("input[name='use-app']:checked").value : '',
+    training: document.querySelector("input[name='training']:checked") ? document.querySelector("input[name='training']:checked").value : '',
+    translation_feature: document.querySelector("input[name='translation-feature']:checked") ? document.querySelector("input[name='translation-feature']:checked").value : '',
+    life_change: document.querySelector("[name='life-change']").value,
     email: document.querySelector("[name='email']").value,
-    beta_user: document.querySelector("[name='beta_user']").value,
-    form_language: document.querySelector("[name='form_language']").value,
+    beta_user: document.querySelector("input[name='beta-user']:checked") ? document.querySelector("input[name='beta-user']:checked").value : '',
+    form_language: document.querySelector("[name='form-language']").value,
   };
 
   const response = await fetch(
-    "https://script.google.com/macros/s/AKfycbwlACkVJbJe6OmL39YbeTINZalzznXAfoG1PzE3PjrGYslUOkTFO_QoNYkt5em6U2Rl4A/exec",
+    "https://script.google.com/macros/s/AKfycbzRvrc5F_viepepXKC4Zb4JqKFzruMg4_937Th63NXRCZGsXtbziuhF4PksVxhEUytbYA/exec",
     {
       method: "POST",
       body: JSON.stringify(formData),
       headers: { "Content-Type": "application/json" }
     }
-  );
+  ).catch(error => {
+    console.error('Error:', error);
+  });
 
-  alert("Form submitted successfully!");
+  // Show thank you screen after submission attempt
+  showThankYou();
 });
 
