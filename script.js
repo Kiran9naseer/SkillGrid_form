@@ -610,7 +610,7 @@ document.getElementById("skillgrid-form").addEventListener("submit", async funct
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxvyEx9HiXKVAa7_tvsbmDFWPNx-W2tkeug0FzmzutAJEZFPqKJ1u4a1MLh2apW-97YBA/exec",
+      " https://script.google.com/macros/s/AKfycbxvyEx9HiXKVAa7_tvsbmDFWPNx-W2tkeug0FzmzutAJEZFPqKJ1u4a1MLh2apW-97YBA/exec",
         {
           method: "POST",
           body: JSON.stringify(formData),
