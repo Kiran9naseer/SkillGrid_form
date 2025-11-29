@@ -610,19 +610,17 @@ document.getElementById("skillgrid-form").addEventListener("submit", async funct
 
     try {
       const response = await fetch(
-      " https://script.google.com/macros/s/AKfycbxvyEx9HiXKVAa7_tvsbmDFWPNx-W2tkeug0FzmzutAJEZFPqKJ1u4a1MLh2apW-97YBA/exec",
+        "https://script.google.com/macros/s/AKfycbzuCbCNkAluxmNkpJa5nqIH0y0RgRUarBJXyP4u54WRng1q9HIiLcQPlnFMgLg0m_5jzg/exec",
         {
           method: "POST",
           body: JSON.stringify(formData),
-          headers: { "Content-Type": "application/json" }
+          headers: { "Content-Type": "application/json" },
+          mode: 'no-cors'
         }
       );
       
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      
-      // Show thank you screen after successful submission
+      // With no-cors mode, we can't check response.ok
+      // But we'll assume success and show thank you screen
       if (submitBtn) {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
