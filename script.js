@@ -467,78 +467,7 @@ function changeLanguage(lang) {
     }
 }
 
-// Form submission handler
-document.getElementById('skillgrid-form').addEventListener('submit', function(e) {
-    let isValid = true;
-    const requiredFields = this.querySelectorAll('[required]');
-    
-    requiredFields.forEach(field => {
-        if (!field.value || (field.type === 'radio' && !field.checked)) {
-            if (field.type !== 'radio' && field.type !== 'checkbox') {
-                isValid = false;
-                field.style.borderColor = '#dc3545';
-            }
-        } else field.style.borderColor = '#e0e0e0';
-    });
-    
-    const skillCheckboxes = document.querySelectorAll('input[name="skills"]');
-    let skillSelected = false;
-    skillCheckboxes.forEach(checkbox => { if (checkbox.checked) skillSelected = true; });
-    
-    if (!skillSelected) {
-        isValid = false;
-        alert(translations[currentLanguage]['please-select-at-least-one-skill']);
-        document.getElementById('q5-label').style.color = '#dc3545';
-        setTimeout(() => document.getElementById('q5-label').style.color = '', 3000);
-    } else document.getElementById('q5-label').style.color = '';
-
-    // If form is valid, submit to Netlify and show thank you screen
-    if (isValid) {
-        // Prevent default submission to handle it ourselves
-        e.preventDefault();
-        
-        // Get submit button and show loading animation
-        const submitBtn = document.getElementById('submit-btn');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Submitting';
-        submitBtn.disabled = true;
-        
-        // Add ellipsis animation
-        let dotCount = 0;
-        const ellipsisInterval = setInterval(() => {
-            dotCount = (dotCount % 3) + 1;
-            submitBtn.textContent = 'Submitting' + '.'.repeat(dotCount);
-        }, 500);
-        
-        // Add 2 second delay before submission
-        setTimeout(() => {
-            // Clear ellipsis animation
-            clearInterval(ellipsisInterval);
-            
-            // Submit form data to Netlify
-            const formData = new FormData(this);
-            fetch('/', {
-                // method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString()
-            }).then(() => {
-                // Show thank you screen after successful submission
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                showThankYou();
-            }).catch(() => {
-                // Show thank you screen even if submission fails
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                showThankYou();
-            });
-        }, 2000);
-    } else {
-        // Prevent submission if invalid
-        e.preventDefault();
-    }
-});
-
+// Form submission handler for Google Sheets
 // Other-skill auto-check
 document.getElementById('other-skill').addEventListener('focus', function() {
     const otherCheckbox = document.querySelector('input[value="other"]');
@@ -603,37 +532,111 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById("skillgrid-form").addEventListener("submit", async function(e) {
   e.preventDefault();
-
-  const formData = {
-    name: document.querySelector("[name='name']").value,
-    country: document.querySelector("[name='country']").value,
-    location: document.querySelector("[name='location']").value,
-    age: document.querySelector("input[name='age']:checked") ? document.querySelector("input[name='age']:checked").value : '',
-    skills: Array.from(document.querySelectorAll("input[name='skills']:checked")).map(cb => cb.value).join(", "),
-    other_skill: document.querySelector("[name='other-skill']") ? document.querySelector("[name='other-skill']").value : '',
-    experience: document.querySelector("input[name='experience']:checked") ? document.querySelector("input[name='experience']:checked").value : '',
-    previous_order: document.querySelector("input[name='previous-order']:checked") ? document.querySelector("input[name='previous-order']:checked").value : '',
-    use_app: document.querySelector("input[name='use-app']:checked") ? document.querySelector("input[name='use-app']:checked").value : '',
-    training: document.querySelector("input[name='training']:checked") ? document.querySelector("input[name='training']:checked").value : '',
-    translation_feature: document.querySelector("input[name='translation-feature']:checked") ? document.querySelector("input[name='translation-feature']:checked").value : '',
-    life_change: document.querySelector("[name='life-change']").value,
-    email: document.querySelector("[name='email']").value,
-    beta_user: document.querySelector("input[name='beta-user']:checked") ? document.querySelector("input[name='beta-user']:checked").value : '',
-    form_language: document.querySelector("[name='form-language']").value,
-  };
-
-  const response = await fetch(
-    "https://script.google.com/macros/s/AKfycbzRvrc5F_viepepXKC4Zb4JqKFzruMg4_937Th63NXRCZGsXtbziuhF4PksVxhEUytbYA/exec",
-    {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: { "Content-Type": "application/json" }
+  
+  // Form validation
+  let isValid = true;
+  const requiredFields = this.querySelectorAll('[required]');
+  
+  requiredFields.forEach(field => {
+    if (!field.value || (field.type === 'radio' && !this.querySelector(`input[name='${field.name}']:checked`))) {
+      if (field.type !== 'radio' && field.type !== 'checkbox') {
+        isValid = false;
+        field.style.borderColor = '#dc3545';
+      }
+    } else {
+      field.style.borderColor = '#e0e0e0';
     }
-  ).catch(error => {
-    console.error('Error:', error);
   });
+  
+  const skillCheckboxes = document.querySelectorAll('input[name="skills"]');
+  let skillSelected = false;
+  skillCheckboxes.forEach(checkbox => { if (checkbox.checked) skillSelected = true; });
+  
+  const q5Label = document.getElementById('q5-label');
+  if (!skillSelected) {
+    isValid = false;
+    alert(translations[currentLanguage]['please-select-at-least-one-skill']);
+    if (q5Label) {
+      q5Label.style.color = '#dc3545';
+      setTimeout(() => {
+        if (q5Label) q5Label.style.color = '';
+      }, 3000);
+    }
+  } else if (q5Label) {
+    q5Label.style.color = '';
+  }
 
-  // Show thank you screen after submission attempt
-  showThankYou();
+  if (!isValid) {
+    return;
+  }
+
+  // Get submit button and show loading animation
+  const submitBtn = document.getElementById('submit-btn');
+  const originalText = submitBtn ? submitBtn.textContent : 'Submit Form';
+  if (submitBtn) {
+    submitBtn.textContent = 'Submitting';
+    submitBtn.disabled = true;
+  }
+  
+  // Add ellipsis animation
+  let dotCount = 0;
+  const ellipsisInterval = setInterval(() => {
+    dotCount = (dotCount % 3) + 1;
+    if (submitBtn) submitBtn.textContent = 'Submitting' + '.'.repeat(dotCount);
+  }, 500);
+  
+  // Add 2 second delay before submission
+  setTimeout(async () => {
+    // Clear ellipsis animation
+    clearInterval(ellipsisInterval);
+    
+    const formData = {
+      name: document.querySelector("[name='name']") ? document.querySelector("[name='name']").value : '',
+      country: document.querySelector("[name='country']") ? document.querySelector("[name='country']").value : '',
+      location: document.querySelector("[name='location']") ? document.querySelector("[name='location']").value : '',
+      age: document.querySelector("input[name='age']:checked") ? document.querySelector("input[name='age']:checked").value : '',
+      skills: Array.from(document.querySelectorAll("input[name='skills']:checked")).map(cb => cb.value).join(", "),
+      other_skill: document.querySelector("[name='other-skill']") ? document.querySelector("[name='other-skill']").value : '',
+      experience: document.querySelector("input[name='experience']:checked") ? document.querySelector("input[name='experience']:checked").value : '',
+      previous_order: document.querySelector("input[name='previous-order']:checked") ? document.querySelector("input[name='previous-order']:checked").value : '',
+      use_app: document.querySelector("input[name='use-app']:checked") ? document.querySelector("input[name='use-app']:checked").value : '',
+      training: document.querySelector("input[name='training']:checked") ? document.querySelector("input[name='training']:checked").value : '',
+      translation_feature: document.querySelector("input[name='translation-feature']:checked") ? document.querySelector("input[name='translation-feature']:checked").value : '',
+      life_change: document.querySelector("[name='life-change']") ? document.querySelector("[name='life-change']").value : '',
+      email: document.querySelector("[name='email']") ? document.querySelector("[name='email']").value : '',
+      beta_user: document.querySelector("input[name='beta-user']:checked") ? document.querySelector("input[name='beta-user']:checked").value : '',
+      form_language: document.querySelector("[name='form-language']") ? document.querySelector("[name='form-language']").value : '',
+    };
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxvyEx9HiXKVAa7_tvsbmDFWPNx-W2tkeug0FzmzutAJEZFPqKJ1u4a1MLh2apW-97YBA/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: { "Content-Type": "application/json" }
+        }
+      );
+      
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      
+      // Show thank you screen after successful submission
+      if (submitBtn) {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+      showThankYou();
+    } catch (error) {
+      console.error('Error:', error);
+      // Show thank you screen even if submission fails
+      if (submitBtn) {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+      showThankYou();
+    }
+  }, 2000);
 });
 
